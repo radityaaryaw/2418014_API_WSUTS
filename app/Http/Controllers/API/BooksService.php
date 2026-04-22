@@ -25,7 +25,8 @@ class BooksService extends Controller
         } else {
             return response()->json([
                 'status' => false,
-                'message' => 'Data tidak ditemukan'
+                'message' => 'Data tidak ditemukan',
+                'data' => null
             ], 404);
         }
     }
@@ -50,7 +51,8 @@ class BooksService extends Controller
         } else {
             return response()->json([
                 'status' => false,
-                'message' => 'Data tidak ditemukan'
+                'message' => 'Data tidak ditemukan',
+                'data' => null
             ], 404);
         }
     }
@@ -96,7 +98,8 @@ class BooksService extends Controller
         if (!$books) {
             return response()->json([
                 'status' => false,
-                'message' => 'Data tidak ditemukan'
+                'message' => 'Data tidak ditemukan',
+                'data' => null
             ], 404);
         }
 
@@ -151,7 +154,8 @@ class BooksService extends Controller
         if (!$books) {
             return response()->json([
                 'status' => false,
-                'message' => 'Data tidak ditemukan'
+                'message' => 'Data tidak ditemukan',
+                'data' => null
             ], 404);
         }
 

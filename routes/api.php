@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\BooksService;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::controller(BooksService::class)->prefix('/books')->group(function () {
+    Route::get('/', 'get');
+    Route::get('/{id?}', 'detail');
+    Route::post('/', 'store');
+    Route::put('/{id?}', 'update');
+    Route::delete('/{id?}', 'destroy');
 });
